@@ -2,7 +2,7 @@
 #C SS3_Control_NA_SMA_2017_12.xlsx												
 DATA.ss
 CONTROL.ss
-0 # 0=use init values in control file; 1=use ss3.par
+1 # 0=use init values in control file; 1=use ss3.par
 2 # run display detail (0,1,2)
 1 # detailed age-structured reports in REPORT.SSO (0,1) 
 0 # write detailed info from first call to echoinput.sso (0,1) 
@@ -15,7 +15,7 @@ CONTROL.ss
 10 # MCeval burn interval
 2 # MCeval thin interval
 0 # jitter initial parm value by this fraction
-1973 # min yr for sdreport outputs (-1 for styr)
+1975 # min yr for sdreport outputs (-1 for styr)
 2016 # max yr for sdreport outputs (-1 for endyr; -2 for endyr+Nforecastyrs
 0 # N individual STD years 
 #vector of year values 

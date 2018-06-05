@@ -14,11 +14,13 @@ run_assessments = function(RootFile,
                   "_",
                   with(parmgrid[parmgrid$EM == RepE,],
                        paste0(parmgrid[parmgrid$EM == RepE,-1], collapse = "-")),
-                  "\\")
+                  "/")
+  
+  # EMRep <- "G:/MAKO/mako_sim_bat/MAK_EM_2_0.8-1-1-3853/" ## for testing only
   
   # Modify EM starter file
   Starter = SS_readstarter(file = paste0(EMRep, "starter.ss"), verbose = F)
-  Starter[['init_values_src']] = 0 ## read from par
+  Starter[['init_values_src']] = 1 ## read from par
   Starter[['N_bootstraps']] = 1 ## fit with NO obs error
   SS_writestarter(
     mylist = Starter,
@@ -28,21 +30,22 @@ run_assessments = function(RootFile,
     warn = F
   )
   
-  # # Modify EM PAR File [beta = SR_Parm2, sfrac = SR_parm3]
-  # Lines = readLines(con = paste0(EMRep, "ss3.par"))
-  # LOI <- grep("SR_parm", Lines)[c(2,3)] + 1
-  # NewLine = strsplit(Lines[LOI], " ")
-  # for (a in 1:length(NewLine)) {
-  #   pName = Lines[grep("SR_parm", Lines)[c(2,3)]][a] ## get parameter name to ensure match
-  #   NewLine[[a]] = parmgrid[parmgrid$EM == RepE, pName] ## reassign parameter name
-  #   cat("replacing ", pName, "\n")
-  #   Lines[LOI][a] = paste0(NewLine[[a]], collapse = " ")
-  # } ## end newlines
-  # writeLines(text = Lines,  con = paste0(EMRep, "ss3.par"))
-  #
   
-  
-  # EMRep <- "G:\\MAKO\\mako_sim\\MAK_EM_105_1-0.9-1-5779\\"
+  # # Modify EM PAR File [beta = SR_Parm3, sfrac = SR_parm2]
+  Lines = readLines(con = paste0(EMRep, "ss3.par"))
+  LOI <- grep("SR_parm", Lines)[c(2,3)] + 1
+  NewLine = strsplit(Lines[LOI], " ")
+  for (a in 1:length(NewLine)) {
+    pName = Lines[grep("SR_parm", Lines)[c(2,3)]][a] ## get parameter name to ensure match
+    if(a == 1){ ## first item is Sfrac (SR_Parm[2], as in CTL)
+      NewLine[[a]] = parmgrid[parmgrid$EM == RepE,"# SR_surv_Sfrac" ] ## reassign parameter name
+    } else if (a == 2){ ## second item is Beta
+      NewLine[[a]] = parmgrid[parmgrid$EM == RepE,"# SR_surv_Beta" ] ## reassign parameter name
+    }
+    cat("replacing ", pName, "\n")
+    Lines[LOI][a] = paste0(NewLine[[a]], collapse = " ")
+  } ## end newlines
+  writeLines(text = Lines,  con = paste0(EMRep, "ss3.par"))
   
   # Modify EM Control File [Nat Mort Vector]
   Lines = readLines(con = paste0(EMRep, "CONTROL.ss"))
@@ -54,15 +57,17 @@ run_assessments = function(RootFile,
     NewLine <- paste0(natVecs[parmgrid[parmgrid$EM == RepE, 4], ])
     Lines[LOI] <- paste0(NewLine, collapse = " ")
   }
-  LOI <- grep(paste0(names(parmgrid[, 2:3]), collapse = "|"), Lines)
-  NewLine = strsplit(Lines[LOI], " ") ## br
-  for (a in 1:length(NewLine)) {
-    pName <- names(parmgrid)[grep(last(NewLine[[a]]), names(parmgrid))]
-    NewLine[[a]][c(3, 4)] <- parmgrid[parmgrid$EM == RepE, pName]
-    # NewLine[[a]] = parmgrid[parmgrid$EM == RepE, pName] ## reassign parameter name
-    cat("replacing ", pName, "\n")
-    Lines[LOI][a] = paste0(NewLine[[a]], collapse = " ")
-  } ## end newlines
+  
+  ## Beta SFrac in CTL
+  # LOI <- grep(paste0(names(parmgrid[, 2:3]), collapse = "|"), Lines)
+  # NewLine = strsplit(Lines[LOI], " ") ## br
+  # for (a in 1:length(NewLine)) {
+  #   pName <- names(parmgrid)[grep(last(NewLine[[a]]), names(parmgrid))]
+  #   NewLine[[a]][c(3, 4)] <- parmgrid[parmgrid$EM == RepE, pName]
+  #   # NewLine[[a]] = parmgrid[parmgrid$EM == RepE, pName] ## reassign parameter name
+  #   cat("replacing ", pName, "\n")
+  #   Lines[LOI][a] = paste0(NewLine[[a]], collapse = " ")
+  # } ## end newlines
   
   writeLines(text = Lines,  con = paste0(EMRep, "CONTROL.ss"))
   cat("Updated Natural Mortality Vector", "\n")
@@ -77,28 +82,9 @@ run_assessments = function(RootFile,
   writeLines(text = sDat,  con = paste0(EMRep, "DATA.ss"))
   cat("Updated B_init", "\n")
   
-  ## run in here
   setwd(EMRep)
   shell("ss3.exe -nohess")
   
-  ## save plots
-  if (SSPlots == T) {
   
-  model_1 <- SS_output(EMRep,
-                       covar = FALSE,
-                       forecast = F,
-                       ncols = 313)
-  SS_plots(
-    model_1,
-    datplot = TRUE,
-    pdf = T,
-    png = FALSE,
-    uncertainty = T,
-    pwidth = 9,
-    pheight = 9,
-    rows = 2,
-    cols = 2
-  )
-} ## end ssplots = T
-
+  
 }## end function

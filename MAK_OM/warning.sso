@@ -1,7 +1,6 @@
 SS-V3.24U-fast;_08/29/2014;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_11.2_Win64
-Mon Mar 19 08:54:50 2018
+Fri Apr 06 12:55:43 2018
 
  Minimum size bin is:_40; which is >10cm, which is large for use as size-at-age 0.0 recruitment
-Final gradient: 4.14143e-005 is larger than final_conv: 1e-005
- N warnings: 2
-Number_of_active_parameters_on_or_near_bounds: 8
+ N warnings: 1
+Number_of_active_parameters_on_or_near_bounds: 0

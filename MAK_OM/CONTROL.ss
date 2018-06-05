@@ -90,7 +90,7 @@
 1 #do_recdev:  0=none; 1=devvector; 2=simple deviations
 1985 # first year of main recr_devs; early devs can preceed this era
 2012 # last year of main recr_devs; forecast devs start in following year
-1 #_recdev phase 
+-1 #_recdev phase 
 0 # (0/1) to read 13 advanced options
 #_Cond 0 #_recdev_early_start (0=none; neg value makes relative to recdev_start)
 #_Cond -4 #_recdev_early_phase
@@ -156,7 +156,7 @@
  0 5 0 0.01 -1 99 -1 # InitF_6F6_TW_LRG_N
  0 5 0 0.01 -1 99 -1 # InitF_7F7_TW_LRG_S
  0 5 0 0.01 -1 99 -1 # InitF_8F8_TW_SML
- 0 5 0.25 0.25 -1 99 1 # InitF_9F9_JPN_SS
+ 0 5 0.2 0.01 -1 99 1 # InitF_9F9_JPN_SS
  0 5 0 0.01 -1 99 -1 # InitF_10F10_JPN_DS
  0 5 0 0.01 -1 99 -1 # InitF_11F11_JPN_CST
  0 5 0 0.01 -1 99 -1 # InitF_12F12_JPN_DFN
@@ -260,32 +260,32 @@
  11 0 0 0 # 25 S7_JPN_GEO
  11 0 0 0 # 26 S8_MEX
 #_LO HI INIT PRIOR PR_type SD PHASE env-var use_dev dev_minyr dev_maxyr dev_stddev Block Block_Fxn
- 62.5 297.5 62.9536 148.87 -1 99 2 0 0 0 0 0 0 0 # SizeSel_1P_1_F1_US_CA
- -6 4 -0.836245 -4.56 -1 99 3 0 0 0 0 0 0 0 # SizeSel_1P_2_F1_US_CA
- -1 9 8.85873 7.25 -1 99 3 0 0 0 0 0 0 0 # SizeSel_1P_3_F1_US_CA
- -1 9 8.99857 7.61 -1 99 3 0 0 0 0 0 0 0 # SizeSel_1P_4_F1_US_CA
+ 62.5 297.5 62.9536 148.87 -1 99 -2 0 0 0 0 0 0 0 # SizeSel_1P_1_F1_US_CA
+ -6 4 -0.836245 -4.56 -1 99 -3 0 0 0 0 0 0 0 # SizeSel_1P_2_F1_US_CA
+ -1 9 8.85873 7.25 -1 99 -3 0 0 0 0 0 0 0 # SizeSel_1P_3_F1_US_CA
+ -1 9 8.99857 7.61 -1 99 -3 0 0 0 0 0 0 0 # SizeSel_1P_4_F1_US_CA
  -999 9 -999 -5 -1 99 -4 0 0 0 0 0 0 0 # SizeSel_1P_5_F1_US_CA
  -999 9 -999 -5 -1 99 -4 0 0 0 0 0 0 0 # SizeSel_1P_6_F1_US_CA
  -99 10 -99 1 -1 99 -99 0 0 0 0 0 0 0 # SizeSel_2P_1_F2_US_HI_SS
  -99 10 -99 1 -1 99 -99 0 0 0 0 0 0 0 # SizeSel_2P_2_F2_US_HI_SS
- 62.5 297.5 171.001 148.87 -1 99 2 0 0 0 0 0 0 0 # SizeSel_3P_1_F3_US_HI_DS
- -6 4 -5.98577 -4.56 -1 99 3 0 0 0 0 0 0 0 # SizeSel_3P_2_F3_US_HI_DS
- -1 9 7.38705 7.25 -1 99 3 0 0 0 0 0 0 0 # SizeSel_3P_3_F3_US_HI_DS
- -1 9 7.45721 7.61 -1 99 3 0 0 0 0 0 0 0 # SizeSel_3P_4_F3_US_HI_DS
+ 62.5 297.5 171.001 148.87 -1 99 -2 0 0 0 0 0 0 0 # SizeSel_3P_1_F3_US_HI_DS
+ -6 4 -5.98577 -4.56 -1 99 -3 0 0 0 0 0 0 0 # SizeSel_3P_2_F3_US_HI_DS
+ -1 9 7.38705 7.25 -1 99 -3 0 0 0 0 0 0 0 # SizeSel_3P_3_F3_US_HI_DS
+ -1 9 7.45721 7.61 -1 99 -3 0 0 0 0 0 0 0 # SizeSel_3P_4_F3_US_HI_DS
  -999 9 -999 -5 -1 99 -4 0 0 0 0 0 0 0 # SizeSel_3P_5_F3_US_HI_DS
  -999 9 -999 -5 -1 99 -4 0 0 0 0 0 0 0 # SizeSel_3P_6_F3_US_HI_DS
- 62.5 297.5 100.841 148.87 -1 99 2 0 0 0 0 0.5 0 0 # SizeSel_4P_1_F4_US_DGN
+ 62.5 297.5 100.841 148.87 -1 99 -2 0 0 0 0 0.5 0 0 # SizeSel_4P_1_F4_US_DGN
  -6 4 -5.98539 -4.56 -1 99 -3 0 0 0 0 0 0 0 # SizeSel_4P_2_F4_US_DGN
- -1 9 7.22531 7.25 -1 99 3 0 0 0 0 0 0 0 # SizeSel_4P_3_F4_US_DGN
- -1 9 7.59831 7.61 -1 99 3 0 0 0 0 0 0 0 # SizeSel_4P_4_F4_US_DGN
+ -1 9 7.22531 7.25 -1 99 -3 0 0 0 0 0 0 0 # SizeSel_4P_3_F4_US_DGN
+ -1 9 7.59831 7.61 -1 99 -3 0 0 0 0 0 0 0 # SizeSel_4P_4_F4_US_DGN
  -999 9 -999 -5 -1 99 -4 0 0 0 0 0 0 0 # SizeSel_4P_5_F4_US_DGN
  -999 9 -999 -5 -1 99 -4 0 0 0 0 0 0 0 # SizeSel_4P_6_F4_US_DGN
  -99 10 -99 1 -1 99 -99 0 0 0 0 0 0 0 # SizeSel_5P_1_F5_US_REC
  -99 10 -99 1 -1 99 -99 0 0 0 0 0 0 0 # SizeSel_5P_2_F5_US_REC
- 62.5 297.5 141.071 148.87 -1 99 2 0 0 0 0 0 0 0 # SizeSel_6P_1_F6_TW_LRG_N
- -6 4 -5.99944 -4.56 -1 99 3 0 0 0 0 0 0 0 # SizeSel_6P_2_F6_TW_LRG_N
- -1 9 6.94794 7.25 -1 99 3 0 0 0 0 0 0 0 # SizeSel_6P_3_F6_TW_LRG_N
- -1 9 7.39719 7.61 -1 99 3 0 0 0 0 0 0 0 # SizeSel_6P_4_F6_TW_LRG_N
+ 62.5 297.5 141.071 148.87 -1 99 -2 0 0 0 0 0 0 0 # SizeSel_6P_1_F6_TW_LRG_N
+ -6 4 -5.99944 -4.56 -1 99 -3 0 0 0 0 0 0 0 # SizeSel_6P_2_F6_TW_LRG_N
+ -1 9 6.94794 7.25 -1 99 -3 0 0 0 0 0 0 0 # SizeSel_6P_3_F6_TW_LRG_N
+ -1 9 7.39719 7.61 -1 99 -3 0 0 0 0 0 0 0 # SizeSel_6P_4_F6_TW_LRG_N
  -999 9 -999 -5 -1 99 -4 0 0 0 0 0 0 0 # SizeSel_6P_5_F6_TW_LRG_N
  -999 9 -999 -5 -1 99 -4 0 0 0 0 0 0 0 # SizeSel_6P_6_F6_TW_LRG_N
  -99 10 -99 1 -1 99 -99 0 0 0 0 0 0 0 # SizeSel_7P_1_F7_TW_LRG_S
@@ -302,24 +302,24 @@
  -999 9 -999 -5 -1 99 -4 0 0 0 0 0 0 0 # SizeSel_10P_6_F10_JPN_DS
  -99 10 -99 1 -1 99 -99 0 0 0 0 0 0 0 # SizeSel_11P_1_F11_JPN_CST
  -99 10 -99 1 -1 99 -99 0 0 0 0 0 0 0 # SizeSel_11P_2_F11_JPN_CST
- 62.5 297.5 125.81 148.87 -1 99 2 0 0 0 0 0 0 0 # SizeSel_12P_1_F12_JPN_DFN
- -6 4 -5.99604 -4.56 -1 99 3 0 0 0 0 0 0 0 # SizeSel_12P_2_F12_JPN_DFN
- -1 9 6.82447 7.25 -1 99 3 0 0 0 0 0 0 0 # SizeSel_12P_3_F12_JPN_DFN
- -1 9 6.89017 7.61 -1 99 3 0 0 0 0 0 0 0 # SizeSel_12P_4_F12_JPN_DFN
+ 62.5 297.5 125.81 148.87 -1 99 -2 0 0 0 0 0 0 0 # SizeSel_12P_1_F12_JPN_DFN
+ -6 4 -5.99604 -4.56 -1 99 -3 0 0 0 0 0 0 0 # SizeSel_12P_2_F12_JPN_DFN
+ -1 9 6.82447 7.25 -1 99 -3 0 0 0 0 0 0 0 # SizeSel_12P_3_F12_JPN_DFN
+ -1 9 6.89017 7.61 -1 99 -3 0 0 0 0 0 0 0 # SizeSel_12P_4_F12_JPN_DFN
  -999 9 -999 -5 -1 99 -4 0 0 0 0 0 0 0 # SizeSel_12P_5_F12_JPN_DFN
  -999 9 -999 -5 -1 99 -4 0 0 0 0 0 0 0 # SizeSel_12P_6_F12_JPN_DFN
  -99 10 -99 1 -1 99 -99 0 0 0 0 0 0 0 # SizeSel_13P_1_F13_JPN_OTH
  -99 10 -99 1 -1 99 -99 0 0 0 0 0 0 0 # SizeSel_13P_2_F13_JPN_OTH
- 62.5 297.5 103.519 148.87 -1 99 2 0 0 0 0 0 0 0 # SizeSel_14P_1_F14_MEX_NOR
- -6 4 -5.99276 -4.56 -1 99 3 0 0 0 0 0 0 0 # SizeSel_14P_2_F14_MEX_NOR
- -1 9 7.86862 7.25 -1 99 3 0 0 0 0 0 0 0 # SizeSel_14P_3_F14_MEX_NOR
- -1 9 7.50091 7.61 -1 99 3 0 0 0 0 0 0 0 # SizeSel_14P_4_F14_MEX_NOR
+ 62.5 297.5 103.519 148.87 -1 99 -2 0 0 0 0 0 0 0 # SizeSel_14P_1_F14_MEX_NOR
+ -6 4 -5.99276 -4.56 -1 99 -3 0 0 0 0 0 0 0 # SizeSel_14P_2_F14_MEX_NOR
+ -1 9 7.86862 7.25 -1 99 -3 0 0 0 0 0 0 0 # SizeSel_14P_3_F14_MEX_NOR
+ -1 9 7.50091 7.61 -1 99 -3 0 0 0 0 0 0 0 # SizeSel_14P_4_F14_MEX_NOR
  -999 9 -999 -5 -1 99 -4 0 0 0 0 0 0 0 # SizeSel_14P_5_F14_MEX_NOR
  -999 9 -999 -5 -1 99 -4 0 0 0 0 0 0 0 # SizeSel_14P_6_F14_MEX_NOR
- 62.5 297.5 126.867 148.87 -1 99 2 0 0 0 0 0 0 0 # SizeSel_15P_1_F15_MEX_SOU
- -6 4 -5.98622 -4.56 -1 99 3 0 0 0 0 0 0 0 # SizeSel_15P_2_F15_MEX_SOU
- -1 9 7.32568 7.25 -1 99 3 0 0 0 0 0 0 0 # SizeSel_15P_3_F15_MEX_SOU
- -1 9 6.68226 7.61 -1 99 3 0 0 0 0 0 0 0 # SizeSel_15P_4_F15_MEX_SOU
+ 62.5 297.5 126.867 148.87 -1 99 -2 0 0 0 0 0 0 0 # SizeSel_15P_1_F15_MEX_SOU
+ -6 4 -5.98622 -4.56 -1 99 -3 0 0 0 0 0 0 0 # SizeSel_15P_2_F15_MEX_SOU
+ -1 9 7.32568 7.25 -1 99 -3 0 0 0 0 0 0 0 # SizeSel_15P_3_F15_MEX_SOU
+ -1 9 6.68226 7.61 -1 99 -3 0 0 0 0 0 0 0 # SizeSel_15P_4_F15_MEX_SOU
  -999 9 -999 -5 -1 99 -4 0 0 0 0 0 0 0 # SizeSel_15P_5_F15_MEX_SOU
  -999 9 -999 -5 -1 99 -4 0 0 0 0 0 0 0 # SizeSel_15P_6_F15_MEX_SOU
  -99 10 -99 1 -1 99 -99 0 0 0 0 0 0 0 # SizeSel_16P_1_F16_WCPFC
@@ -413,7 +413,7 @@
   0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 #_add_to_survey_CV
   0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 #_add_to_discard_stddev
   0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 #_add_to_bodywt_CV
-  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 #_mult_by_lencomp_N
+  0.2	0.2	0.2	0.2	0.2	0.2	0.2	0.2	0.2	0.2	0.2	0.2	0.2	0.2	0.2	0.2	0.2	0.2	0.2	0.2	0.2	0.2	0.2	0.2	0.2	0.2 #_mult_by_lencomp_N
   0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 #_mult_by_agecomp_N
   0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 #_mult_by_size-at-age_N
 #
@@ -442,10 +442,10 @@
  1 16 1 0 1
  1 17 1 0 1
  1 18 1 0 1
- 1 19 1 0 1
+ 1 19 1 1 1
  1 20 1 0 1
  1 21 1 0 1
- 1 22 1 1 1
+ 1 22 1 0 1
  1 23 1 0 1
  1 24 1 0 1
  1 25 1 0 1
